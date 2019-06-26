@@ -1,10 +1,10 @@
-#N canvas 702 72 1358 881 10;
+#N canvas 197 147 1358 881 10;
 #X obj 93 301 hsl 128 15 0 1 0 0 autoplay_speed autoplay_speed_rcv
-autoplay_speed -2 -8 0 10 -262144 -1 -1 12300 1;
+autoplay_speed -2 -8 0 10 -262144 -1 -1 12700 1;
 #X obj 93 345 tgl 15 0 freeze freeze_rcv freeze 17 7 0 10 -262144 -1
 -1 0 1;
 #X obj 92 267 tgl 15 0 autoplay_on_off autoplay_on_off_rcv autoplay_on_off
-17 7 0 10 -262144 -1 -1 1 1;
+17 7 0 10 -262144 -1 -1 0 1;
 #X floatatom 654 359 5 0 0 0 sample_seconds - -;
 #X obj 95 445 bng 15 250 50 0 reset_pitch reset_pitch_rcv reset_pitch
 17 7 0 10 -262144 -1 -1;
@@ -170,22 +170,32 @@ send freeze \; on_off_rcv send on_off \; defaults_rcv send defaults
 #X obj 415 -131 t b b b;
 #X obj 605 -151 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X floatatom 351 388 5 0 0 0 - - -;
-#X text 290 387 channels;
-#X obj 419 490 loadbang;
-#X msg 450 553 16;
-#X obj 350 339 r num_channels_rcv;
-#X obj 353 460 s num_channels;
+#X floatatom 309 208 5 0 0 0 - - -;
+#X text 248 207 channels;
+#X obj 515 532 loadbang;
+#X msg 545 560 16;
+#X obj 308 159 r num_channels_rcv;
+#X obj 311 231 s num_channels;
 #X obj 653 332 r sample_seconds_rcv;
-#X obj 420 608 s numgrains;
-#X msg 307 564 vis 4 1;
-#X msg 489 554 32;
-#X text 242 623 number of instances of y_grain_stereo should equal
+#X obj 515 615 s numgrains;
+#X msg 190 566 vis 4 1;
+#X msg 584 561 32;
+#X text 168 644 number of instances of y_grain_stereo should equal
 the numgrains (I recognise this is silly);
-#X msg 419 553 10;
-#X obj 173 597 clone y_grain_stereo 10;
+#X msg 514 560 10;
 #X text 235 291 (some vestigial things in here to clean up);
-#X connect 5 0 26 0;
+#X obj 257 357 inlet;
+#X obj 293 478 inlet;
+#X obj 172 594 clone y_grain_stereo_poly 10;
+#X obj 327 520 hsl 128 15 0 1 0 0 grain_pitch grain_pitch_rcv grain_pitch
+-2 -8 0 10 -262144 -1 -1 3175 1;
+#X msg 334 549 all \$1;
+#X obj 253 392 tgl 30 0 on_off on_off_rcv on_off 30 7 0 10 -262144
+-1 -1 0 1;
+#X msg 263 452 all \$1;
+#X obj 260 428 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X connect 5 0 29 0;
 #X connect 11 0 12 0;
 #X connect 12 0 7 1;
 #X connect 12 1 7 0;
@@ -195,7 +205,14 @@ the numgrains (I recognise this is silly);
 #X connect 17 0 21 0;
 #X connect 18 0 14 0;
 #X connect 20 0 3 0;
-#X connect 22 0 26 1;
+#X connect 22 0 29 1;
 #X connect 23 0 21 0;
 #X connect 25 0 21 0;
+#X connect 27 0 32 0;
+#X connect 28 0 30 0;
+#X connect 30 0 31 0;
+#X connect 31 0 29 2;
+#X connect 32 0 34 0;
+#X connect 33 0 29 1;
+#X connect 34 0 33 0;
 #X coords 0 881 1 880 400 600 0;

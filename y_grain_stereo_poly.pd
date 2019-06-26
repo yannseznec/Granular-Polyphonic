@@ -6,7 +6,7 @@
 #X obj 252 413 sig~;
 #X obj 350 417 sig~;
 #X obj 317 701 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
+-1 -1 6350 1;
 #X obj 383 959 *~;
 #X obj 440 951 *~;
 #X obj 665 823 line~;
@@ -26,11 +26,11 @@
 #X obj 453 733 *;
 #X obj 446 653 - 100;
 #X obj 444 625 random 200;
-#X obj 457 331 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 457 331 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 178 518 *~;
 #X obj 639 236 hsl 128 15 -1 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
+-1 -1 6351 1;
 #X obj 608 82 random 1000;
 #X floatatom 609 152 5 0 0 0 - - -;
 #X obj 598 460 sig~;
@@ -42,7 +42,7 @@
 #X obj 612 256 t b f;
 #X obj 601 434 *;
 #X obj 836 236 hsl 128 15 -1 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
+-1 -1 6350 1;
 #X obj 803 84 random 1000;
 #X floatatom 804 154 5 0 0 0 - - -;
 #X obj 805 111 / 1000;
@@ -64,8 +64,8 @@
 #X obj 436 1007 *~;
 #X obj 639 1006 *~;
 #X obj 665 969 line~;
-#X obj 664 914 tgl 15 0 empty on_off empty 17 7 0 10 -262144 -1 -1
-0 1;
+#X obj 664 914 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
 #X obj 597 304 abs;
 #X obj 28 427 * 8000;
 #X obj 28 451 expr 8000-$f1;
@@ -130,7 +130,7 @@
 #X obj 343 388 r \$0-grain_pitch;
 #X obj 384 131 s \$0-thisGrain_on;
 #X obj 460 295 r \$0-thisGrain_on;
-#X obj 664 775 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 664 775 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 664 751 r \$0-thisGrain_on;
 #N canvas 0 23 1088 686 simple_env 0;
@@ -191,6 +191,7 @@
 #X obj 444 592 r \$0-phase_trigger;
 #X obj 119 163 r \$0-phase_trigger;
 #X obj 962 137 r grain_pitch;
+#X obj 968 171 inlet;
 #X connect 0 0 27 0;
 #X connect 0 0 84 0;
 #X connect 0 0 113 0;
@@ -341,4 +342,4 @@
 #X connect 135 0 40 0;
 #X connect 136 0 25 0;
 #X connect 137 0 132 0;
-#X connect 138 0 83 0;
+#X connect 139 0 83 0;
