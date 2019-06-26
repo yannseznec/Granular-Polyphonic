@@ -218,13 +218,13 @@
 #X obj 182 572 catch~ grainoutR;
 #X obj 111 714 dac~;
 #X obj 37 252 hsl 195 15 0 1 0 0 sample_offset sample_offset_rcv sample_offset
--2 -8 0 10 -262144 -1 -1 4800 1;
+-2 -8 0 10 -262144 -1 -1 5800 1;
 #X obj 37 316 hsl 128 15 0 1 0 0 offset_random offset_random_rcv offset_random
--2 -8 0 10 -262144 -1 -1 600 1;
+-2 -8 0 10 -262144 -1 -1 1200 1;
 #X obj 37 444 hsl 128 15 0 1 0 0 grain_size grain_size_rcv grain_size
 -2 -8 0 10 -262144 -1 -1 3750 1;
 #X obj 38 408 hsl 128 15 0 1 0 0 random_pitch random_pitch_rcv random_pitch
--2 -8 0 10 -262144 -1 -1 12700 1;
+-2 -8 0 10 -262144 -1 -1 0 1;
 #X obj 189 520 hsl 128 15 0 1 0 0 random_panning random_panning_rcv
 random_panning -2 -8 0 10 -262144 -1 -1 7620 1;
 #X obj 189 488 hsl 128 15 0 1 0 0 global_pan global_pan_rcv global_pan
@@ -447,27 +447,26 @@ grains_playing -2 -8 0 10 -262144 -1 -1 12700 1;
 #X msg 404 701 \; pd dsp 1;
 #X obj 399 676 loadbang;
 #X obj 262 713 r \$0-reverb_on;
-#X text 451 544 default is 4 \, worth experimenting with;
 #X obj 261 262 tgl 15 0 record record_rcv record 17 7 0 10 -262144
 -1 -1 0 1;
 #X obj 262 243 tgl 15 0 input_monitor input_monitor_rcv input_monitor
 17 7 0 10 -262144 -1 -1 0 1;
 #X obj 37 13 hsl 195 8 0 1 0 0 empty 0-loc empty -2 -8 0 10 -262144
--1 -1 4536 1;
+-1 -1 6187 1;
 #X obj 37 21 hsl 195 8 0 1 0 0 empty 1-loc empty -2 -8 0 10 -262144
--1 -1 4421 1;
+-1 -1 5630 1;
 #X obj 37 29 hsl 195 8 0 1 0 0 empty 2-loc empty -2 -8 0 10 -262144
--1 -1 4786 1;
+-1 -1 6403 1;
 #X obj 37 37 hsl 195 8 0 1 0 0 empty 3-loc empty -2 -8 0 10 -262144
--1 -1 4481 1;
+-1 -1 5067 1;
 #X obj 37 45 hsl 195 8 0 1 0 0 empty 4-loc empty -2 -8 0 10 -262144
--1 -1 4498 1;
+-1 -1 6555 1;
 #X obj 37 53 hsl 195 8 0 1 0 0 empty 5-loc empty -2 -8 0 10 -262144
--1 -1 4854 1;
+-1 -1 6310 1;
 #X obj 37 61 hsl 195 8 0 1 0 0 empty 6-loc empty -2 -8 0 10 -262144
--1 -1 4566 1;
+-1 -1 6108 1;
 #X obj 37 69 hsl 195 8 0 1 0 0 empty 7-loc empty -2 -8 0 10 -262144
--1 -1 4429 1;
+-1 -1 5611 1;
 #X obj 471 9 notein;
 #X obj 462 46 pack 0 0;
 #X obj 563 248 pack 0 0;
@@ -484,11 +483,13 @@ grains_playing -2 -8 0 10 -262144 -1 -1 12700 1;
 #X floatatom 712 221 0 0 0 0 - - -;
 #X obj 712 191 exp;
 #X floatatom 704 153 5 0 0 0 - - -;
-#X obj 682 131 / 8;
 #X obj 715 248 - 1;
 #X floatatom 715 269 5 0 0 0 - - -;
 #X floatatom 701 101 5 0 0 0 - - -;
 #X obj 625 86 - 47;
+#X text 611 173 I think this pitch system could be better;
+#X obj 682 131 / 32;
+#X text 451 544 default is 2 \, worth experimenting with;
 #X connect 4 0 25 0;
 #X connect 5 0 26 0;
 #X connect 21 0 20 0;
@@ -511,24 +512,24 @@ grains_playing -2 -8 0 10 -262144 -1 -1 12700 1;
 #X connect 37 0 35 1;
 #X connect 41 0 40 0;
 #X connect 42 0 36 0;
-#X connect 54 0 55 0;
-#X connect 54 1 55 1;
-#X connect 55 0 63 0;
-#X connect 56 0 64 1;
-#X connect 57 0 64 0;
+#X connect 53 0 54 0;
+#X connect 53 1 54 1;
+#X connect 54 0 62 0;
+#X connect 55 0 63 1;
+#X connect 56 0 63 0;
+#X connect 57 0 55 0;
 #X connect 58 0 56 0;
-#X connect 59 0 57 0;
-#X connect 60 0 57 1;
-#X connect 62 0 36 0;
-#X connect 63 0 58 0;
-#X connect 63 0 59 0;
-#X connect 63 1 72 0;
-#X connect 63 2 60 0;
-#X connect 65 0 69 0;
+#X connect 59 0 56 1;
+#X connect 61 0 36 0;
+#X connect 62 0 57 0;
+#X connect 62 0 58 0;
+#X connect 62 1 70 0;
+#X connect 62 2 59 0;
+#X connect 64 0 67 0;
+#X connect 65 0 64 0;
 #X connect 66 0 65 0;
-#X connect 67 0 66 0;
-#X connect 68 0 67 0;
-#X connect 69 0 70 0;
-#X connect 70 0 56 1;
-#X connect 71 0 68 1;
-#X connect 72 0 68 0;
+#X connect 67 0 68 0;
+#X connect 68 0 55 1;
+#X connect 69 0 72 1;
+#X connect 70 0 72 0;
+#X connect 72 0 66 0;
