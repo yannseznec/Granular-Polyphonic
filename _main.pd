@@ -42,15 +42,15 @@
 #X connect 17 0 19 0;
 #X connect 17 0 20 0;
 #X connect 18 0 17 0;
-#X restore 421 310 pd loadsound;
+#X restore 421 281 pd loadsound;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X array poly_grain-R 702643 float 2;
 #X coords 0 1 702643 -1 200 70 1 0 0;
-#X restore 34 196 graph;
+#X restore 34 167 graph;
 #N canvas 0 23 450 278 (subpatch) 0;
 #X array poly_grain-L 702643 float 2;
 #X coords 0 1 702643 -1 200 70 1 0 0;
-#X restore 34 126 graph;
+#X restore 34 97 graph;
 #N canvas 453 60 1194 614 windows 0;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array hann 441 float 1;
@@ -212,54 +212,54 @@
 #X connect 38 0 40 0;
 #X connect 43 0 28 0;
 #X connect 44 0 28 0;
-#X restore 425 337 pd windows;
-#X obj 70 597 catch~ grainoutL;
-#X obj 182 601 catch~ grainoutR;
-#X obj 111 743 dac~;
-#X obj 37 281 hsl 195 15 0 1 0 0 sample_offset sample_offset_rcv sample_offset
--2 -8 0 10 -262144 -1 -1 9700 1;
-#X obj 37 345 hsl 128 15 0 1 0 0 offset_random offset_random_rcv offset_random
--2 -8 0 10 -262144 -1 -1 254 1;
-#X obj 37 473 hsl 128 15 0 1 0 0 grain_size grain_size_rcv grain_size
--2 -8 0 10 -262144 -1 -1 6350 1;
-#X obj 38 437 hsl 128 15 0 1 0 0 random_pitch random_pitch_rcv random_pitch
--2 -8 0 10 -262144 -1 -1 0 1;
-#X obj 189 549 hsl 128 15 0 1 0 0 random_panning random_panning_rcv
+#X restore 425 308 pd windows;
+#X obj 70 568 catch~ grainoutL;
+#X obj 182 572 catch~ grainoutR;
+#X obj 111 714 dac~;
+#X obj 37 252 hsl 195 15 0 1 0 0 sample_offset sample_offset_rcv sample_offset
+-2 -8 0 10 -262144 -1 -1 5700 1;
+#X obj 37 316 hsl 128 15 0 1 0 0 offset_random offset_random_rcv offset_random
+-2 -8 0 10 -262144 -1 -1 8254 1;
+#X obj 37 444 hsl 128 15 0 1 0 0 grain_size grain_size_rcv grain_size
+-2 -8 0 10 -262144 -1 -1 8650 1;
+#X obj 38 408 hsl 128 15 0 1 0 0 random_pitch random_pitch_rcv random_pitch
+-2 -8 0 10 -262144 -1 -1 8600 1;
+#X obj 189 520 hsl 128 15 0 1 0 0 random_panning random_panning_rcv
 random_panning -2 -8 0 10 -262144 -1 -1 7620 1;
-#X obj 189 517 hsl 128 15 0 1 0 0 global_pan global_pan_rcv global_pan
+#X obj 189 488 hsl 128 15 0 1 0 0 global_pan global_pan_rcv global_pan
 -2 -8 0 10 -262144 -1 -1 6350 1;
-#X obj 186 364 vsl 15 128 0 1 0 0 attack attack_rcv attack 0 -9 0 10
--262144 -1 -1 254 1;
-#X obj 239 365 vsl 15 128 0 1 0 0 release release_rcv release 0 -9
-0 10 -262144 -1 -1 254 1;
-#X obj 37 511 hsl 128 15 0.01 1 0 0 grain_env grain_env_rcv grain_env
--2 -8 0 10 -262144 -1 -1 12700 1;
-#X obj 37 548 hsl 128 15 0 1 0 0 grains_playing grains_playing_rcv
-grains_playing -2 -8 0 10 -262144 -1 -1 12700 1;
-#X obj 34 373 tgl 15 0 reverse reverse_rcv reverse 17 7 0 10 -262144
+#X obj 186 335 vsl 15 128 0 1 0 0 attack attack_rcv attack 0 -9 0 10
+-262144 -1 -1 4854 1;
+#X obj 239 336 vsl 15 128 0 1 0 0 release release_rcv release 0 -9
+0 10 -262144 -1 -1 7154 1;
+#X obj 37 482 hsl 128 15 0.01 1 0 0 grain_env grain_env_rcv grain_env
+-2 -8 0 10 -262144 -1 -1 4900 1;
+#X obj 37 519 hsl 128 15 0 1 0 0 grains_playing grains_playing_rcv
+grains_playing -2 -8 0 10 -262144 -1 -1 8600 1;
+#X obj 34 344 tgl 15 0 reverse reverse_rcv reverse 17 7 0 10 -262144
 -1 -1 0 1;
-#X obj 38 311 hsl 195 15 0 1 0 0 rec_location rec_location_rcv rec_location
+#X obj 38 282 hsl 195 15 0 1 0 0 rec_location rec_location_rcv rec_location
 -2 -8 0 10 -262144 -258113 -1 0 1;
-#X obj 291 368 vsl 15 128 0.01 1.4 1 0 volume volume_rcv volume 0 -9
+#X obj 291 339 vsl 15 128 0.01 1.4 1 0 volume volume_rcv volume 0 -9
 0 10 -262144 -1 -1 11835 1;
-#X obj 395 675 s pd;
-#X msg 395 633 midi-properties;
-#X msg 406 653 audio-properties;
-#X obj 245 720 s singlegrainvolume;
-#X obj 243 671 loadbang;
-#X obj 77 645 *~;
-#X obj 170 645 *~;
-#X obj 94 622 r volume;
-#X msg 245 695 0.8;
-#X floatatom 397 577 5 0 0 0 - - -;
-#X obj 396 603 s pitch_range;
-#X obj 66 839 rev2~ 105 100 75 20;
-#X obj 169 875 dac~;
-#X obj 205 838 rev2~ 105 100 75 20;
-#X obj 72 814 *~;
-#X obj 211 811 *~;
-#X msg 259 765 \$1 10;
-#X obj 259 788 line~;
+#X obj 395 646 s pd;
+#X msg 395 604 midi-properties;
+#X msg 406 624 audio-properties;
+#X obj 245 691 s singlegrainvolume;
+#X obj 243 642 loadbang;
+#X obj 77 616 *~;
+#X obj 170 616 *~;
+#X obj 94 593 r volume;
+#X msg 245 666 0.8;
+#X floatatom 397 548 5 0 0 0 - - -;
+#X obj 396 574 s pitch_range;
+#X obj 66 810 rev2~ 105 100 75 20;
+#X obj 169 846 dac~;
+#X obj 205 809 rev2~ 105 100 75 20;
+#X obj 72 785 *~;
+#X obj 211 782 *~;
+#X msg 259 736 \$1 10;
+#X obj 259 759 line~;
 #N canvas 291 118 1057 664 sampling_stereo 0;
 #X obj 42 108 adc~;
 #X msg 478 144 stop, f 7;
@@ -430,7 +430,7 @@ grains_playing -2 -8 0 10 -262144 -1 -1 12700 1;
 #X connect 68 0 47 0;
 #X connect 69 0 12 0;
 #X connect 71 0 18 1;
-#X restore 422 287 pd sampling_stereo;
+#X restore 422 258 pd sampling_stereo;
 #N canvas 0 23 450 300 presets 0;
 #X obj 234 58 inlet;
 #X obj 94 66 loadbang;
@@ -442,41 +442,48 @@ grains_playing -2 -8 0 10 -262144 -1 -1 12700 1;
 0.02 \; volume_rcv 1 \; num_channels_rcv 2 \;;
 #X connect 0 0 2 0;
 #X connect 1 0 2 0;
-#X restore 408 434 pd presets;
-#X msg 404 730 \; pd dsp 1;
-#X obj 399 705 loadbang;
-#X obj 262 742 r \$0-reverb_on;
-#X text 451 573 default is 4 \, worth experimenting with;
-#X obj 262 303 tgl 15 0 record record_rcv record 17 7 0 10 -262144
+#X restore 408 405 pd presets;
+#X msg 404 701 \; pd dsp 1;
+#X obj 399 676 loadbang;
+#X obj 262 713 r \$0-reverb_on;
+#X text 451 544 default is 4 \, worth experimenting with;
+#X obj 261 262 tgl 15 0 record record_rcv record 17 7 0 10 -262144
 -1 -1 0 1;
-#X obj 263 284 tgl 15 0 input_monitor input_monitor_rcv input_monitor
+#X obj 262 243 tgl 15 0 input_monitor input_monitor_rcv input_monitor
 17 7 0 10 -262144 -1 -1 0 1;
-#X obj 37 42 hsl 195 8 0 1 0 0 empty 0-loc empty -2 -8 0 10 -262144
--1 -1 9572 1;
-#X obj 37 50 hsl 195 8 0 1 0 0 empty 1-loc empty -2 -8 0 10 -262144
--1 -1 9605 1;
-#X obj 37 58 hsl 195 8 0 1 0 0 empty 2-loc empty -2 -8 0 10 -262144
--1 -1 9817 1;
-#X obj 37 66 hsl 195 8 0 1 0 0 empty 3-loc empty -2 -8 0 10 -262144
--1 -1 9586 1;
-#X obj 37 74 hsl 195 8 0 1 0 0 empty 4-loc empty -2 -8 0 10 -262144
--1 -1 9600 1;
-#X obj 37 82 hsl 195 8 0 1 0 0 empty 5-loc empty -2 -8 0 10 -262144
--1 -1 9567 1;
-#X obj 37 90 hsl 195 8 0 1 0 0 empty 6-loc empty -2 -8 0 10 -262144
--1 -1 9703 1;
-#X obj 37 98 hsl 195 8 0 1 0 0 empty 7-loc empty -2 -8 0 10 -262144
--1 -1 9589 1;
-#X obj 471 38 notein;
-#X obj 462 75 pack 0 0;
-#X obj 559 171 pack 0 0;
-#X obj 414 175 pack 0 0;
-#X obj 600 146 / 127;
-#X obj 554 145 - 1;
-#X obj 418 147 - 1;
-#X obj 463 99 poly 8 1;
-#X obj 456 143 > 0;
-#X obj 402 208 clone -x ys.granular_stereo 8;
+#X obj 37 13 hsl 195 8 0 1 0 0 empty 0-loc empty -2 -8 0 10 -262144
+-1 -1 11299 1;
+#X obj 37 21 hsl 195 8 0 1 0 0 empty 1-loc empty -2 -8 0 10 -262144
+-1 -1 2431 1;
+#X obj 37 29 hsl 195 8 0 1 0 0 empty 2-loc empty -2 -8 0 10 -262144
+-1 -1 8368 1;
+#X obj 37 37 hsl 195 8 0 1 0 0 empty 3-loc empty -2 -8 0 10 -262144
+-1 -1 1241 1;
+#X obj 37 45 hsl 195 8 0 1 0 0 empty 4-loc empty -2 -8 0 10 -262144
+-1 -1 3696 1;
+#X obj 37 53 hsl 195 8 0 1 0 0 empty 5-loc empty -2 -8 0 10 -262144
+-1 -1 11600 1;
+#X obj 37 61 hsl 195 8 0 1 0 0 empty 6-loc empty -2 -8 0 10 -262144
+-1 -1 4798 1;
+#X obj 37 69 hsl 195 8 0 1 0 0 empty 7-loc empty -2 -8 0 10 -262144
+-1 -1 6958 1;
+#X obj 471 9 notein;
+#X obj 462 46 pack 0 0;
+#X obj 559 142 pack 0 0;
+#X obj 414 146 pack 0 0;
+#X obj 554 116 - 1;
+#X obj 418 118 - 1;
+#X obj 456 114 > 0;
+#X obj 239 221 bng 15 250 50 0 select_sound empty select_sound 17 7
+0 10 -262144 -1 -1;
+#X obj 241 717 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 627 132 5 0 0 0 - - -;
+#X floatatom 693 67 5 0 0 0 - - -;
+#X obj 625 86 - 48;
+#X obj 627 111 / 24;
+#X obj 463 70 poly 8 1;
+#X obj 401 179 clone ys.granular_stereo 8;
 #X connect 4 0 25 0;
 #X connect 5 0 26 0;
 #X connect 21 0 20 0;
@@ -501,14 +508,18 @@ grains_playing -2 -8 0 10 -262144 -1 -1 12700 1;
 #X connect 42 0 36 0;
 #X connect 54 0 55 0;
 #X connect 54 1 55 1;
-#X connect 55 0 61 0;
-#X connect 56 0 63 1;
-#X connect 57 0 63 0;
-#X connect 58 0 56 1;
-#X connect 59 0 56 0;
-#X connect 60 0 57 0;
-#X connect 61 0 59 0;
-#X connect 61 0 60 0;
-#X connect 61 1 58 0;
-#X connect 61 2 62 0;
-#X connect 62 0 57 1;
+#X connect 55 0 67 0;
+#X connect 56 0 68 1;
+#X connect 57 0 68 0;
+#X connect 58 0 56 0;
+#X connect 59 0 57 0;
+#X connect 60 0 57 1;
+#X connect 62 0 36 0;
+#X connect 63 0 56 1;
+#X connect 65 0 66 0;
+#X connect 66 0 63 0;
+#X connect 67 0 58 0;
+#X connect 67 0 59 0;
+#X connect 67 1 64 0;
+#X connect 67 1 65 0;
+#X connect 67 2 60 0;

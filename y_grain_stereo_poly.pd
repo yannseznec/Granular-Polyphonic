@@ -1,4 +1,4 @@
-#N canvas 384 23 1265 831 10;
+#N canvas 387 135 1265 831 10;
 #X obj 17 280 wrap~;
 #X obj 186 573 +~;
 #X obj 186 546 *~;
@@ -30,7 +30,7 @@
 1;
 #X obj 178 518 *~;
 #X obj 639 236 hsl 128 15 -1 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 6351 1;
+-1 -1 6303 1;
 #X obj 608 82 random 1000;
 #X floatatom 609 152 5 0 0 0 - - -;
 #X obj 598 460 sig~;
@@ -192,6 +192,8 @@
 #X obj 119 163 r \$0-phase_trigger;
 #X obj 962 137 r grain_pitch;
 #X obj 968 171 inlet;
+#X floatatom 837 544 5 0 0 0 - - -;
+#X floatatom 981 273 5 0 0 0 - - -;
 #X connect 0 0 27 0;
 #X connect 0 0 84 0;
 #X connect 0 0 113 0;
@@ -203,6 +205,7 @@
 #X connect 3 0 81 0;
 #X connect 4 0 116 0;
 #X connect 5 0 114 0;
+#X connect 5 0 27 1;
 #X connect 6 0 12 0;
 #X connect 7 0 57 0;
 #X connect 8 0 58 0;
@@ -253,6 +256,7 @@
 #X connect 47 0 46 0;
 #X connect 47 1 46 1;
 #X connect 48 0 121 0;
+#X connect 48 0 140 0;
 #X connect 49 0 51 0;
 #X connect 50 0 51 0;
 #X connect 51 0 48 0;
@@ -293,6 +297,7 @@
 #X connect 81 0 0 0;
 #X connect 82 0 81 1;
 #X connect 83 0 46 0;
+#X connect 83 0 141 0;
 #X connect 84 0 90 0;
 #X connect 85 0 86 0;
 #X connect 86 0 84 1;
@@ -325,7 +330,6 @@
 #X connect 111 1 83 1;
 #X connect 112 0 55 1;
 #X connect 113 1 133 0;
-#X connect 114 0 27 1;
 #X connect 115 0 1 1;
 #X connect 116 0 2 1;
 #X connect 117 0 131 0;
