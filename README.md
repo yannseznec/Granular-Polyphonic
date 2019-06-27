@@ -1,6 +1,8 @@
 # Granular Polyphonic Sampling Synthesizer
 Pure Data (PD) system for making fun noises from samples
 
+Open the main.pd patch to get started. 
+
 This patch takes polyphonic MIDI note input (currently up to 8 voices, but potentially many more if you like) and uses these to play a granular synth system. 
 
 There are various parameters to play with.
