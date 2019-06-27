@@ -30,7 +30,7 @@
 1;
 #X obj 178 518 *~;
 #X obj 639 236 hsl 128 15 -1 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 6223 1;
+-1 -1 6386 1;
 #X obj 608 82 random 1000;
 #X floatatom 609 152 5 0 0 0 - - -;
 #X obj 598 460 sig~;
@@ -109,8 +109,8 @@
 #X obj 28 403 r grain_env;
 #X obj 314 664 r global_pan;
 #X obj 467 702 r random_panning;
-#X obj 438 1095 throw~ grainoutL;
-#X obj 632 1092 throw~ grainoutR;
+#X obj 429 1165 throw~ grainoutL;
+#X obj 623 1162 throw~ grainoutR;
 #X obj 620 370 r samplelength;
 #X obj 664 882 inlet;
 #X obj 437 1047 *~ 0.8;
@@ -194,6 +194,11 @@
 #X floatatom 837 544 5 0 0 0 - - -;
 #X floatatom 981 273 5 0 0 0 - - -;
 #X obj 976 234 * 2;
+#X obj 522 1116 vcf~ 1;
+#X obj 538 1077 sig~;
+#X floatatom 538 1048 5 0 0 0 - - -;
+#X obj 567 1116 vcf~ 1;
+#X obj 940 591 * 6000;
 #X connect 0 0 27 0;
 #X connect 0 0 83 0;
 #X connect 0 0 112 0;
@@ -253,6 +258,7 @@
 #X connect 45 0 39 0;
 #X connect 45 0 47 0;
 #X connect 46 0 48 0;
+#X connect 46 0 146 0;
 #X connect 47 0 46 0;
 #X connect 47 1 46 1;
 #X connect 48 0 120 0;
@@ -322,7 +328,9 @@
 #X connect 103 0 23 1;
 #X connect 106 0 73 0;
 #X connect 107 0 60 0;
+#X connect 108 0 142 0;
 #X connect 108 0 104 0;
+#X connect 109 0 145 0;
 #X connect 109 0 105 0;
 #X connect 110 0 141 0;
 #X connect 110 1 141 1;
@@ -347,3 +355,7 @@
 #X connect 138 0 141 0;
 #X connect 141 0 46 0;
 #X connect 141 0 140 0;
+#X connect 143 0 142 1;
+#X connect 143 0 145 1;
+#X connect 144 0 143 0;
+#X connect 146 0 144 0;
